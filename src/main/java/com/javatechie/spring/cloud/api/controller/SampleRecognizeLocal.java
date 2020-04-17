@@ -25,7 +25,7 @@ public class SampleRecognizeLocal {
 
             // Encoding of audio data sent. This sample sets this explicitly.
             // This field is optional for FLAC and WAV audio formats.
-            RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.ENCODING_UNSPECIFIED;
+            RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16 ;
             RecognitionConfig config = RecognitionConfig.newBuilder().setLanguageCode(languageCode).setSampleRateHertz(sampleRateHertz).setEncoding(encoding).build();
             RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(AudioToByteString(localFilePath)).build();
 
