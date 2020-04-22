@@ -3,9 +3,6 @@ package com.javatechie.spring.cloud.api.controller;
 import com.google.cloud.speech.v1.*;
 import com.google.protobuf.ByteString;
 
-
-import javax.sound.sampled.*;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,13 +11,12 @@ import java.nio.file.Paths;
 
 public class SampleRecognizeLocal {
 
-    public static String transcript(AudioFile audioFile) {
+    public static String transcript(AudioConfig audioConfig) {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
-            RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16 ;
-            RecognitionConfig config = RecognitionConfig.newBuilder().setLanguageCode(audioFile.getLanguageCode()).setSampleRateHertz(audioFile.getSampleRateHertz()).setEncoding(encoding).build();
-            RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(AudioToByteString(audioFile.getFile())).build();
 
+            RecognitionConfig config = RecognitionConfig.newBuilder().setLanguageCode(audioConfig.getLanguageCode()).setSampleRateHertz(audioConfig.getSampleRateHertz()).setEncoding(audioConfig.getEncoding()).build();
+            RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(AudioToByteString(audioConfig.getFile())).build();
             RecognizeRequest request = RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
 
             RecognizeResponse response = speechClient.recognize(request);

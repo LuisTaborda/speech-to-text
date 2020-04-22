@@ -142,5 +142,12 @@
     <orderEntry type="library" name="Maven: io.opencensus:opencensus-contrib-http-util:0.24.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.apis:google-api-services-storage:v1-rev20190910-1.30.3" level="project" />
     <orderEntry type="library" name="Maven: javazoom:jlayer:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-all-deps:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-core:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-nativebin-win32:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-nativebin-win64:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-nativebin-linux32:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-nativebin-linux64:2.7.3" level="project" />
+    <orderEntry type="library" name="Maven: ws.schild:jave-nativebin-osx64:2.7.3" level="project" />
   </component>
 </module>
