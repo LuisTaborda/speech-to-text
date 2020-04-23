@@ -14,8 +14,8 @@ public class SampleRecognizeLocal {
     public static String transcript(AudioConfig audioConfig) {
         try (SpeechClient speechClient = SpeechClient.create()) {
 
-
-            RecognitionConfig config = RecognitionConfig.newBuilder().setLanguageCode(audioConfig.getLanguageCode()).setSampleRateHertz(audioConfig.getSampleRateHertz()).setEncoding(audioConfig.getEncoding()).build();
+            RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.LINEAR16 ;
+            RecognitionConfig config = RecognitionConfig.newBuilder().setLanguageCode("pt-BR").setSampleRateHertz(audioConfig.getSampleRateHertz()).setEncoding(encoding).build();
             RecognitionAudio audio = RecognitionAudio.newBuilder().setContent(AudioToByteString(audioConfig.getFile())).build();
             RecognizeRequest request = RecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
 
@@ -25,6 +25,7 @@ public class SampleRecognizeLocal {
 
                 SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
                 System.out.printf("Transcript: %s\n", alternative.getTranscript());
+
                 return alternative.getTranscript();
             }
         } catch (Exception exception) {

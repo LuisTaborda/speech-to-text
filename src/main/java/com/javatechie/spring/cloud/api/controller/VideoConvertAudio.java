@@ -15,14 +15,14 @@ public class VideoConvertAudio {
      */
     public static File mp4ToMp3(File video)
     {
-        File fileAudio = new File("C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\video-to-audio.mp3");
+        File fileAudio = new File("C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\audio-extraido.wav");
         AudioAttributes audio = new AudioAttributes();
-        audio.setCodec("libmp3lame");
+        audio.setCodec("pcm_s16le");
         audio.setBitRate(new Integer(128000));
         audio.setChannels(new Integer(1));
-        audio.setSamplingRate(new Integer(48000));
+        audio.setSamplingRate(new Integer(44100));
         EncodingAttributes attrs = new EncodingAttributes();
-        attrs.setFormat("mp3");
+        attrs.setFormat("wav");
         attrs.setAudioAttributes(audio);
         Encoder encoder = new Encoder();
         try

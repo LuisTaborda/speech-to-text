@@ -30,19 +30,25 @@ public class AudioUtilities {
     }
 
     public static AudioConfig audioToSpeech(String path){
+        File file = new File(path);
+        return audioToSpeech(file);
+    }
+
+    public static AudioConfig audioToSpeech(File file){
+        String path = file.getAbsolutePath();
         String type = path.substring(path.length()-3);
+
         AudioConfig out = null;
         try{
             switch(type.toUpperCase()){
                 case "WAV":
-                    out = new AudioConfig(new File(path), 44100);
+                    out = new AudioConfig(file, 44100);
                     break;
                 case "MP3":
-                    out = new AudioConfig(convertMP3toWAV(path), 48000);
+                    out = new AudioConfig(convertMP3toWAV(file), 48000);
                     break;
                 case "MP4":
-                    File result = VideoConvertAudio.mp4ToMp3(new File(path));
-                    out = new AudioConfig(convertMP3toWAV(result.getAbsolutePath()), 48000);
+                    out = new AudioConfig(VideoConvertAudio.mp4ToMp3(file), 44100);
                     break;
                 default:
                     System.out.println(String.format("O Tipo [ %s ] não suportado, consulte o código", type));
@@ -56,5 +62,4 @@ public class AudioUtilities {
             return out;
         }
     }
-
 }
