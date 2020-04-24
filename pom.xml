@@ -57,6 +57,7 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/javazoom/jlayer -->
+
 		<dependency>
 			<groupId>javazoom</groupId>
 			<artifactId>jlayer</artifactId>

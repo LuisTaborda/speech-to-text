@@ -13,7 +13,7 @@ import java.io.File;
 public class SpeechToTextController {
 
 
-    private final String localpath = "C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\video2.mp4";
+    private final String localpath = "C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\video.mp4";
 
     @RequestMapping(value="/speech", method = RequestMethod.GET)
     public String speech( @RequestParam( name = "transcript", required = false, defaultValue = "Error Failed load audio") String transcript, Model model) throws Exception, EncoderException {
