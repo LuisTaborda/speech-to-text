@@ -18,6 +18,7 @@ public class VideoConvertAudio {
         File fileAudio = new File("C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\audio-extraido.wav");
         AudioAttributes audio = new AudioAttributes();
         audio.setCodec("pcm_s16le");
+        //audio.setCodec("libmp3lame"); não funciona com wav    
         audio.setBitRate(new Integer(128000));
         audio.setChannels(new Integer(1));
         audio.setSamplingRate(new Integer(44100));
