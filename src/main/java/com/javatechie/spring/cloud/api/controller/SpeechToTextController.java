@@ -1,5 +1,8 @@
 package com.javatechie.spring.cloud.api.controller;
 
+import com.javatechie.spring.cloud.api.entity.AudioConfig;
+import com.javatechie.spring.cloud.api.service.AudioConfigService;
+import com.javatechie.spring.cloud.api.service.TranscriptService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +22,9 @@ public class SpeechToTextController {
     public String speech( @RequestParam( name = "transcript", required = false, defaultValue = "Error Failed load audio") String transcript, Model model) throws Exception, EncoderException {
 
         //Gerar configurações apartir do seu formato do arquivo
-        AudioConfig audioFile = AudioUtilities.audioToSpeech(new File(localpath));
+        AudioConfig audioFile = AudioConfigService.audioToSpeech(new File(localpath));
         //Enviar para o serviço da google cloud - speech to text
-        transcript = SampleRecognizeLocal.transcript(audioFile);
+        transcript = TranscriptService.transcript(audioFile);
         //Exibir na Tela
         model.addAttribute("transcript",transcript);
         return "speech";
