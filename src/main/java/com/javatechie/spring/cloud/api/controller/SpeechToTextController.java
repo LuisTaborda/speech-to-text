@@ -8,26 +8,39 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import ws.schild.jave.EncoderException;
 
 import java.io.File;
-
 @Controller
 public class SpeechToTextController {
 
 
-    private final String localpath = "C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\video.mp4";
 
-    @RequestMapping(value="/speech", method = RequestMethod.GET)
-    public String speech( @RequestParam( name = "transcript", required = false, defaultValue = "Error Failed load audio") String transcript, Model model) throws Exception, EncoderException {
+    @RequestMapping(value="/transcript-default", method = RequestMethod.GET)
+    public String transcript( @RequestParam( name = "transcript", required = false, defaultValue = "Error Failed load audio") String transcript, Model model){
+        String localpath = "C:\\Users\\usuario\\Documents\\workspace\\speech-to-text\\src\\main\\resources\\audios\\video.mp4";
 
+        model.addAttribute("transcript",transcript(localpath));
+        return "transcript";
+    }
+
+    @RequestMapping(value = "/transcript", method = RequestMethod.POST )
+    public String submit(@RequestParam("path") String path, @RequestParam( name = "transcript", required = false, defaultValue = "Error Failed load audio") String transcript, Model model) {
+        model.addAttribute("transcript",transcript(path));
+        return "transcript";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET )
+    public String home() {
+        return "home";
+    }
+
+    public String transcript(String path){
+        File file = new File(path);
         //Gerar configurações apartir do seu formato do arquivo
-        AudioConfig audioFile = AudioConfigService.audioToSpeech(new File(localpath));
+        AudioConfig audioFile = AudioConfigService.audioToSpeech(file);
         //Enviar para o serviço da google cloud - speech to text
-        transcript = TranscriptService.transcript(audioFile);
-        //Exibir na Tela
-        model.addAttribute("transcript",transcript);
-        return "speech";
+        return TranscriptService.transcript(audioFile);
     }
 
 }
+
