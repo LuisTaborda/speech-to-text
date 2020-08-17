@@ -1,8 +1,8 @@
-package com.javatechie.spring.cloud.api.controller;
+package com.spring.cloud.api.controller;
 
-import com.javatechie.spring.cloud.api.entity.AudioConfig;
-import com.javatechie.spring.cloud.api.service.AudioConfigService;
-import com.javatechie.spring.cloud.api.service.TranscriptService;
+import com.spring.cloud.api.entity.AudioConfig;
+import com.spring.cloud.api.service.AudioConfigService;
+import com.spring.cloud.api.service.TranscriptService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

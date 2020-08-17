@@ -1,6 +1,6 @@
-package com.javatechie.spring.cloud.api.service;
+package com.spring.cloud.api.service;
 
-import com.javatechie.spring.cloud.api.entity.AudioConfig;
+import com.spring.cloud.api.entity.AudioConfig;
 import javazoom.jl.decoder.JavaLayerException;
 
 import java.io.File;

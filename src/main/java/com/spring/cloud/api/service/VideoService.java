@@ -1,4 +1,4 @@
-package com.javatechie.spring.cloud.api.service;
+package com.spring.cloud.api.service;
 
 
 import ws.schild.jave.*;

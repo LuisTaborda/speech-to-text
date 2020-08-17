@@ -1,4 +1,4 @@
-package com.javatechie.spring.cloud.api.entity;
+package com.spring.cloud.api.entity;
 
 import java.io.File;
 

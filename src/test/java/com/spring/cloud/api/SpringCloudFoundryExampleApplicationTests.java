@@ -1,4 +1,4 @@
-package com.javatechie.spring.cloud.api;
+package com.spring.cloud.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,8 +1,8 @@
-package com.javatechie.spring.cloud.api.service;
+package com.spring.cloud.api.service;
 
 import com.google.cloud.speech.v1.*;
 import com.google.protobuf.ByteString;
-import com.javatechie.spring.cloud.api.entity.AudioConfig;
+import com.spring.cloud.api.entity.AudioConfig;
 
 import java.io.*;
 import java.nio.file.Files;

@@ -92,6 +92,7 @@
     <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-cloud-speech-v1:1.22.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.api:api-common:1.8.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:28.1-android" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
@@ -124,7 +125,6 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
     <orderEntry type="library" name="Maven: org.conscrypt:conscrypt-openjdk-uber:2.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.threeten:threetenbp:1.4.0" level="project" />
-    <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-storage:1.101.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core-http:1.91.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.cloud:google-cloud-core:1.91.3" level="project" />
